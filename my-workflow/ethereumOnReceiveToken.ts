@@ -5,7 +5,7 @@ import { sendTelegramMessage } from "./telegramMessageService";
 import { BridgeFactory } from "./bridge/factory"
 import { getEvmClient } from "./utils/getEvmClient";
 import { Uniflow } from "./evm/generated/Uniflow";
-import { getERC20Decimals } from "./utils/erc20Utils";
+import { getERC20Decimals, getERC20Allowance } from "./utils/erc20Utils";
 
 const TRANSFER_EVENT_ABI = parseAbi(["event Transfer(address indexed from, address indexed to, uint256 amount)"]);
 
@@ -16,8 +16,6 @@ export const ethereumOnReceiveToken = (runtime: Runtime<IConfig>, evmLog: EVMLog
     ];
 
     const data = bytesToHex(evmLog.data);
-
-    // @audit should be taken from evmLog
     const decodedLog = decodeEventLog({abi: TRANSFER_EVENT_ABI, topics: topics, data: data});
     
     runtime.log(decodedLog.args.to);
@@ -31,6 +29,13 @@ export const ethereumOnReceiveToken = (runtime: Runtime<IConfig>, evmLog: EVMLog
     sendTelegramMessage(runtime, `Token sent by: ${decodedLog.args.from} of amount ${decodedLog.args.amount}, decimals ${tokenDecimals} on ${bytesToHex(evmLog.address)}`);
     
     // @todo check for approval given by from address to the config contract
+    const allowances = getERC20Allowance(bytesToHex(evmLog.address).toString(), runtime, evmClient, { owner: decodedLog.args.to, spender: networksConfig['eth'].configContract });
+
+    runtime.log(`Allowance to config contract for token: ${allowances.toString()}`);
+
+    if (allowances < decodedLog.args.amount) {
+        return { message: "error", error: "Insufficient allowance for config contract" };
+    }
     
     const uniflowContract = new Uniflow(evmClient, networksConfig['eth'].configContract as `0x${string}`);
     const owner = uniflowContract.owner(runtime);

@@ -16,8 +16,6 @@ export class ChainlinkCCIPBridge implements IBridge {
             ]
         );
 
-        props.runtime.log(concatHex(["0x02", encodedReportParams]));
-
         const signedReport = props.runtime.report({
             encodedPayload: hexToBase64(concatHex(["0x02", encodedReportParams])),
             encoderName: "evm",
