@@ -180,7 +180,7 @@ export type UniflowApprovalDecoded = {
 }
 
 
-export const UniflowABI = [{"type":"constructor","inputs":[{"name":"_forwarderAddress","type":"address","internalType":"address"},{"name":"_ccipRouter","type":"address","internalType":"address"},{"name":"_linkToken","type":"address","internalType":"address"}],"stateMutability":"nonpayable"},{"type":"function","name":"allowlistDestanationChainForCCIP","inputs":[{"name":"selector","type":"uint64","internalType":"uint64"},{"name":"enable","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"getExpectedAuthor","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"getExpectedWorkflowId","inputs":[],"outputs":[{"name":"","type":"bytes32","internalType":"bytes32"}],"stateMutability":"view"},{"type":"function","name":"getExpectedWorkflowName","inputs":[],"outputs":[{"name":"","type":"bytes10","internalType":"bytes10"}],"stateMutability":"view"},{"type":"function","name":"getForwarderAddress","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"noMatch","inputs":[],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},{"type":"function","name":"noReport","inputs":[],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},{"type":"function","name":"onReport","inputs":[{"name":"metadata","type":"bytes","internalType":"bytes"},{"name":"report","type":"bytes","internalType":"bytes"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"owner","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"processReport","inputs":[{"name":"report","type":"bytes","internalType":"bytes"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"renounceOwnership","inputs":[],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"s_allowlistedChains","inputs":[{"name":"","type":"uint64","internalType":"uint64"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"function","name":"s_ccipRouter","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contractIRouterClient"}],"stateMutability":"view"},{"type":"function","name":"s_latestReport","inputs":[],"outputs":[{"name":"","type":"bytes","internalType":"bytes"}],"stateMutability":"view"},{"type":"function","name":"s_linkToken","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contractIERC20"}],"stateMutability":"view"},{"type":"function","name":"s_tokenConfig","inputs":[{"name":"token","type":"address","internalType":"address"}],"outputs":[{"name":"receiver","type":"address","internalType":"address"},{"name":"minAmountToTrigger","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},{"type":"function","name":"setExpectedAuthor","inputs":[{"name":"_author","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setExpectedWorkflowId","inputs":[{"name":"_id","type":"bytes32","internalType":"bytes32"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setExpectedWorkflowName","inputs":[{"name":"_name","type":"string","internalType":"string"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setForwarderAddress","inputs":[{"name":"_forwarder","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setupToken","inputs":[{"name":"token","type":"address","internalType":"address"},{"name":"tokenConfig","type":"tuple","internalType":"structUniflow.TokenConfig","components":[{"name":"receiver","type":"address","internalType":"address"},{"name":"minAmountToTrigger","type":"uint256","internalType":"uint256"}]}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"supportsInterface","inputs":[{"name":"interfaceId","type":"bytes4","internalType":"bytes4"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"pure"},{"type":"function","name":"transferOwnership","inputs":[{"name":"newOwner","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"updateReceiver","inputs":[{"name":"token","type":"address","internalType":"address"},{"name":"receiver","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"event","name":"AcrossBridgeInitiated","inputs":[{"name":"token","type":"address","indexed":false,"internalType":"address"},{"name":"receiver","type":"address","indexed":false,"internalType":"address"},{"name":"amount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"CCIPBridgeInitiated","inputs":[{"name":"messageId","type":"bytes32","indexed":false,"internalType":"bytes32"},{"name":"token","type":"address","indexed":false,"internalType":"address"},{"name":"receiver","type":"address","indexed":false,"internalType":"address"},{"name":"amount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"ExpectedAuthorUpdated","inputs":[{"name":"previousAuthor","type":"address","indexed":true,"internalType":"address"},{"name":"newAuthor","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"ExpectedWorkflowIdUpdated","inputs":[{"name":"previousId","type":"bytes32","indexed":true,"internalType":"bytes32"},{"name":"newId","type":"bytes32","indexed":true,"internalType":"bytes32"}],"anonymous":false},{"type":"event","name":"ExpectedWorkflowNameUpdated","inputs":[{"name":"previousName","type":"bytes10","indexed":true,"internalType":"bytes10"},{"name":"newName","type":"bytes10","indexed":true,"internalType":"bytes10"}],"anonymous":false},{"type":"event","name":"ForwarderAddressUpdated","inputs":[{"name":"previousForwarder","type":"address","indexed":true,"internalType":"address"},{"name":"newForwarder","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"OwnershipTransferred","inputs":[{"name":"previousOwner","type":"address","indexed":true,"internalType":"address"},{"name":"newOwner","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"SecurityWarning","inputs":[{"name":"message","type":"string","indexed":false,"internalType":"string"}],"anonymous":false},{"type":"event","name":"UniflowApproval","inputs":[{"name":"user","type":"address","indexed":false,"internalType":"address"},{"name":"approval","type":"bool","indexed":false,"internalType":"bool"}],"anonymous":false},{"type":"error","name":"InvalidAuthor","inputs":[{"name":"received","type":"address","internalType":"address"},{"name":"expected","type":"address","internalType":"address"}]},{"type":"error","name":"InvalidForwarderAddress","inputs":[]},{"type":"error","name":"InvalidSender","inputs":[{"name":"sender","type":"address","internalType":"address"},{"name":"expected","type":"address","internalType":"address"}]},{"type":"error","name":"InvalidWorkflowId","inputs":[{"name":"received","type":"bytes32","internalType":"bytes32"},{"name":"expected","type":"bytes32","internalType":"bytes32"}]},{"type":"error","name":"InvalidWorkflowName","inputs":[{"name":"received","type":"bytes10","internalType":"bytes10"},{"name":"expected","type":"bytes10","internalType":"bytes10"}]},{"type":"error","name":"OwnableInvalidOwner","inputs":[{"name":"owner","type":"address","internalType":"address"}]},{"type":"error","name":"OwnableUnauthorizedAccount","inputs":[{"name":"account","type":"address","internalType":"address"}]},{"type":"error","name":"SafeERC20FailedOperation","inputs":[{"name":"token","type":"address","internalType":"address"}]},{"type":"error","name":"Uniflow__AcrossBridgeDepositFailed","inputs":[]},{"type":"error","name":"Uniflow__CCIPChainNotAllowlisted","inputs":[{"name":"chainSelector","type":"uint64","internalType":"uint64"}]},{"type":"error","name":"Uniflow__EmptyReport","inputs":[]},{"type":"error","name":"Uniflow__InsufficientLinkTokenForCCIPBridge","inputs":[]},{"type":"error","name":"Uniflow__InvalidReceiverConfigured","inputs":[]},{"type":"error","name":"Uniflow__MinAmountNotFulfilled","inputs":[]},{"type":"error","name":"Uniflow__TokenNotConfigured","inputs":[]},{"type":"error","name":"WorkflowNameRequiresAuthorValidation","inputs":[]}] as const
+export const UniflowABI = [{"type":"constructor","inputs":[{"name":"_forwarderAddress","type":"address","internalType":"address"},{"name":"_ccipRouter","type":"address","internalType":"address"},{"name":"_linkToken","type":"address","internalType":"address"}],"stateMutability":"nonpayable"},{"type":"function","name":"allowlistDestanationChainForCCIP","inputs":[{"name":"selector","type":"uint64","internalType":"uint64"},{"name":"enable","type":"bool","internalType":"bool"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"getExpectedAuthor","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"getExpectedWorkflowId","inputs":[],"outputs":[{"name":"","type":"bytes32","internalType":"bytes32"}],"stateMutability":"view"},{"type":"function","name":"getExpectedWorkflowName","inputs":[],"outputs":[{"name":"","type":"bytes10","internalType":"bytes10"}],"stateMutability":"view"},{"type":"function","name":"getForwarderAddress","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"onReport","inputs":[{"name":"metadata","type":"bytes","internalType":"bytes"},{"name":"report","type":"bytes","internalType":"bytes"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"owner","inputs":[],"outputs":[{"name":"","type":"address","internalType":"address"}],"stateMutability":"view"},{"type":"function","name":"renounceOwnership","inputs":[],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"s_allowlistedChains","inputs":[{"name":"","type":"uint64","internalType":"uint64"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"view"},{"type":"function","name":"s_ccipRouter","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contractIRouterClient"}],"stateMutability":"view"},{"type":"function","name":"s_linkToken","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contractIERC20"}],"stateMutability":"view"},{"type":"function","name":"s_tokenConfig","inputs":[{"name":"token","type":"address","internalType":"address"}],"outputs":[{"name":"receiver","type":"address","internalType":"address"},{"name":"minAmountToTrigger","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},{"type":"function","name":"setExpectedAuthor","inputs":[{"name":"_author","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setExpectedWorkflowId","inputs":[{"name":"_id","type":"bytes32","internalType":"bytes32"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setExpectedWorkflowName","inputs":[{"name":"_name","type":"string","internalType":"string"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setForwarderAddress","inputs":[{"name":"_forwarder","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"setupToken","inputs":[{"name":"token","type":"address","internalType":"address"},{"name":"tokenConfig","type":"tuple","internalType":"structUniflow.TokenConfig","components":[{"name":"receiver","type":"address","internalType":"address"},{"name":"minAmountToTrigger","type":"uint256","internalType":"uint256"}]}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"supportsInterface","inputs":[{"name":"interfaceId","type":"bytes4","internalType":"bytes4"}],"outputs":[{"name":"","type":"bool","internalType":"bool"}],"stateMutability":"pure"},{"type":"function","name":"transferOwnership","inputs":[{"name":"newOwner","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"function","name":"updateReceiver","inputs":[{"name":"token","type":"address","internalType":"address"},{"name":"receiver","type":"address","internalType":"address"}],"outputs":[],"stateMutability":"nonpayable"},{"type":"event","name":"AcrossBridgeInitiated","inputs":[{"name":"token","type":"address","indexed":false,"internalType":"address"},{"name":"receiver","type":"address","indexed":false,"internalType":"address"},{"name":"amount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"CCIPBridgeInitiated","inputs":[{"name":"messageId","type":"bytes32","indexed":false,"internalType":"bytes32"},{"name":"token","type":"address","indexed":false,"internalType":"address"},{"name":"receiver","type":"address","indexed":false,"internalType":"address"},{"name":"amount","type":"uint256","indexed":false,"internalType":"uint256"}],"anonymous":false},{"type":"event","name":"ExpectedAuthorUpdated","inputs":[{"name":"previousAuthor","type":"address","indexed":true,"internalType":"address"},{"name":"newAuthor","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"ExpectedWorkflowIdUpdated","inputs":[{"name":"previousId","type":"bytes32","indexed":true,"internalType":"bytes32"},{"name":"newId","type":"bytes32","indexed":true,"internalType":"bytes32"}],"anonymous":false},{"type":"event","name":"ExpectedWorkflowNameUpdated","inputs":[{"name":"previousName","type":"bytes10","indexed":true,"internalType":"bytes10"},{"name":"newName","type":"bytes10","indexed":true,"internalType":"bytes10"}],"anonymous":false},{"type":"event","name":"ForwarderAddressUpdated","inputs":[{"name":"previousForwarder","type":"address","indexed":true,"internalType":"address"},{"name":"newForwarder","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"OwnershipTransferred","inputs":[{"name":"previousOwner","type":"address","indexed":true,"internalType":"address"},{"name":"newOwner","type":"address","indexed":true,"internalType":"address"}],"anonymous":false},{"type":"event","name":"SecurityWarning","inputs":[{"name":"message","type":"string","indexed":false,"internalType":"string"}],"anonymous":false},{"type":"event","name":"UniflowApproval","inputs":[{"name":"user","type":"address","indexed":false,"internalType":"address"},{"name":"approval","type":"bool","indexed":false,"internalType":"bool"}],"anonymous":false},{"type":"error","name":"InvalidAuthor","inputs":[{"name":"received","type":"address","internalType":"address"},{"name":"expected","type":"address","internalType":"address"}]},{"type":"error","name":"InvalidForwarderAddress","inputs":[]},{"type":"error","name":"InvalidSender","inputs":[{"name":"sender","type":"address","internalType":"address"},{"name":"expected","type":"address","internalType":"address"}]},{"type":"error","name":"InvalidWorkflowId","inputs":[{"name":"received","type":"bytes32","internalType":"bytes32"},{"name":"expected","type":"bytes32","internalType":"bytes32"}]},{"type":"error","name":"InvalidWorkflowName","inputs":[{"name":"received","type":"bytes10","internalType":"bytes10"},{"name":"expected","type":"bytes10","internalType":"bytes10"}]},{"type":"error","name":"OwnableInvalidOwner","inputs":[{"name":"owner","type":"address","internalType":"address"}]},{"type":"error","name":"OwnableUnauthorizedAccount","inputs":[{"name":"account","type":"address","internalType":"address"}]},{"type":"error","name":"SafeERC20FailedOperation","inputs":[{"name":"token","type":"address","internalType":"address"}]},{"type":"error","name":"Uniflow__AcrossBridgeDepositFailed","inputs":[]},{"type":"error","name":"Uniflow__CCIPChainNotAllowlisted","inputs":[{"name":"chainSelector","type":"uint64","internalType":"uint64"}]},{"type":"error","name":"Uniflow__EmptyReport","inputs":[]},{"type":"error","name":"Uniflow__InsufficientLinkTokenForCCIPBridge","inputs":[]},{"type":"error","name":"Uniflow__InvalidReceiverConfigured","inputs":[]},{"type":"error","name":"Uniflow__MinAmountNotFulfilled","inputs":[]},{"type":"error","name":"Uniflow__TokenNotConfigured","inputs":[]},{"type":"error","name":"WorkflowNameRequiresAuthorValidation","inputs":[]}] as const
 
 export class Uniflow {
   constructor(
@@ -276,50 +276,6 @@ export class Uniflow {
     }) as `0x${string}`
   }
 
-  noMatch(
-    runtime: Runtime<unknown>,
-  ): bigint {
-    const callData = encodeFunctionData({
-      abi: UniflowABI,
-      functionName: 'noMatch' as const,
-    })
-
-    const result = this.client
-      .callContract(runtime, {
-        call: encodeCallMsg({ from: zeroAddress, to: this.address, data: callData }),
-        blockNumber: LAST_FINALIZED_BLOCK_NUMBER,
-      })
-      .result()
-
-    return decodeFunctionResult({
-      abi: UniflowABI,
-      functionName: 'noMatch' as const,
-      data: bytesToHex(result.data),
-    }) as bigint
-  }
-
-  noReport(
-    runtime: Runtime<unknown>,
-  ): bigint {
-    const callData = encodeFunctionData({
-      abi: UniflowABI,
-      functionName: 'noReport' as const,
-    })
-
-    const result = this.client
-      .callContract(runtime, {
-        call: encodeCallMsg({ from: zeroAddress, to: this.address, data: callData }),
-        blockNumber: LAST_FINALIZED_BLOCK_NUMBER,
-      })
-      .result()
-
-    return decodeFunctionResult({
-      abi: UniflowABI,
-      functionName: 'noReport' as const,
-      data: bytesToHex(result.data),
-    }) as bigint
-  }
-
   owner(
     runtime: Runtime<unknown>,
   ): `0x${string}` {
@@ -384,28 +340,6 @@ export class Uniflow {
     return decodeFunctionResult({
       abi: UniflowABI,
       functionName: 's_ccipRouter' as const,
-      data: bytesToHex(result.data),
-    }) as `0x${string}`
-  }
-
-  sLatestReport(
-    runtime: Runtime<unknown>,
-  ): `0x${string}` {
-    const callData = encodeFunctionData({
-      abi: UniflowABI,
-      functionName: 's_latestReport' as const,
-    })
-
-    const result = this.client
-      .callContract(runtime, {
-        call: encodeCallMsg({ from: zeroAddress, to: this.address, data: callData }),
-        blockNumber: LAST_FINALIZED_BLOCK_NUMBER,
-      })
-      .result()
-
-    return decodeFunctionResult({
-      abi: UniflowABI,
-      functionName: 's_latestReport' as const,
       data: bytesToHex(result.data),
     }) as `0x${string}`
   }
@@ -515,30 +449,6 @@ export class Uniflow {
       abi: UniflowABI,
       functionName: 'onReport' as const,
       args: [metadata, report],
-    })
-
-    const reportResponse = runtime
-      .report(prepareReportRequest(callData))
-      .result()
-
-    return this.client
-      .writeReport(runtime, {
-        receiver: this.address,
-        report: reportResponse,
-        gasConfig,
-      })
-      .result()
-  }
-
-  writeReportFromProcessReport(
-    runtime: Runtime<unknown>,
-    report: `0x${string}`,
-    gasConfig?: { gasLimit?: string },
-  ) {
-    const callData = encodeFunctionData({
-      abi: UniflowABI,
-      functionName: 'processReport' as const,
-      args: [report],
     })
 
     const reportResponse = runtime

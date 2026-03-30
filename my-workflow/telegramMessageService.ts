@@ -5,15 +5,20 @@ import { IConfig } from "./interfaces/IConfig";
 // if already present then send to that chat id
 
 export const sendTelegramMessage = (runtime: Runtime<IConfig>, message: string) => {
-    const chatId = runtime.getSecret({id: "TELEGRAM_CHAT_ID"}).result().value;
-    const botToken = runtime.getSecret({id: "TELEGRAM_BOT_ACCESS_TOKEN"}).result().value;
-    const httpClient = new cre.capabilities.HTTPClient();
-
-    httpClient.sendRequest(
-        runtime,
-        _sendTelegramMessage,
-        consensusIdenticalAggregation<boolean>()
-    )(runtime.config, chatId, message, botToken).result();
+    try {
+        const chatId = runtime.getSecret({id: "TELEGRAM_CHAT_ID"}).result().value;
+        const botToken = runtime.getSecret({id: "TELEGRAM_BOT_ACCESS_TOKEN"}).result().value;
+        const httpClient = new cre.capabilities.HTTPClient();
+    
+        httpClient.sendRequest(
+            runtime,
+            _sendTelegramMessage,
+            consensusIdenticalAggregation<boolean>()
+        )(runtime.config, chatId, message, botToken).result();
+    }
+    catch (error) {
+        runtime.log("Error sending notification on telegram, continuing workflow...");
+    }
 }
 
 const _sendTelegramMessage = (sendRequester: HTTPSendRequester, config: IConfig, chatId: string, message: string, botToken: string): boolean => {
